@@ -18,13 +18,19 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * @WebMvcTest 只會自動配置 MVC 測試相關的部分
+ * (不包含 @Component, @Service, Repository beans)
+ * <p>
+ * 會自動配置 MockMvc、Spring Security
+ */
 @WebMvcTest(PointTypeController.class)
 public class PointTypeControllerTest {
 
     @Autowired
     MockMvc mockMVC;
 
-    @MockBean
+    @MockBean // 因為用 @WebMvcTest，PointTypeService 沒有實例，所以要用 mock
     PointTypeService service;
 
     @Test
