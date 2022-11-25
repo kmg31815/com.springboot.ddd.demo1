@@ -1,4 +1,4 @@
-package com.systex.springboot.demo1.com.systex.springboot.test.service;
+package com.systex.springboot.demo1.domain.service;
 
 import com.systex.springboot.demo1.domain.PointType;
 import com.systex.springboot.demo1.domain.common.repository.PointTypeRepository;
@@ -13,7 +13,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;
 
-public class PointTypeServiceTest {
+public class PointTypeServiceUnitTest {
     private PointTypeRepository repository;
     private PointTypeService service;
 
